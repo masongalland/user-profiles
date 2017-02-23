@@ -1,13 +1,16 @@
 angular.module('userProfiles')
 .service('friendService', function( $http ) {
   
+    var baseUrl = "/api/";
     
+
     this.login = function( user ) {
-      /* FIX ME */
+
+      return $http.post(baseUrl + "login", user )
     };
 
     this.getFriends = function() {
-    	/* FIX ME */
+    	return $http.get(baseUrl + "profiles")
     };
   
 });
